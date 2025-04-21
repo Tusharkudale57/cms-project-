@@ -1,0 +1,534 @@
+2025-04-16 16:27:42 [restartedMain] INFO  com.example.login.LoginApplication - Starting LoginApplication using Java 21.0.6 with PID 18204 (C:\Users\Admin\Documents\login\target\classes started by Admin in C:\Users\Admin\Documents\login)
+2025-04-16 16:27:42 [restartedMain] DEBUG com.example.login.LoginApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-16 16:27:42 [restartedMain] INFO  com.example.login.LoginApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-16 16:27:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-16 16:27:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-16 16:27:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16 16:27:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 188 ms. Found 3 JPA repository interfaces.
+2025-04-16 16:27:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-16 16:27:50 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-16 16:27:50 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-16 16:27:50 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-16 16:27:50 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7850 ms
+2025-04-16 16:27:51 [restartedMain] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthFilter' defined in file [C:\Users\Admin\Documents\login\target\classes\com\example\login\security\JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jwtUtil': Unsatisfied dependency expressed through field 'jwtExpiration': Failed to convert value of type 'java.lang.String' to required type 'long'; For input string: "36000000#10hoursinmilliseconds"
+2025-04-16 16:27:51 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-16 16:27:51 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-04-16 16:27:51 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-16 16:27:51 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.login.LoginApplication.main(LoginApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	... 11 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter' defined in file [C:\Users\Admin\Documents\login\target\classes\com\example\login\security\JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jwtUtil': Unsatisfied dependency expressed through field 'jwtExpiration': Failed to convert value of type 'java.lang.String' to required type 'long'; For input string: "36000000#10hoursinmilliseconds"
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4467)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 16 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtUtil': Unsatisfied dependency expressed through field 'jwtExpiration': Failed to convert value of type 'java.lang.String' to required type 'long'; For input string: "36000000#10hoursinmilliseconds"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1609)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 57 common frames omitted
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'long'; For input string: "36000000#10hoursinmilliseconds"
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:87)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:71)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1584)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 71 common frames omitted
+Caused by: java.lang.NumberFormatException: For input string: "36000000#10hoursinmilliseconds"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Long.parseLong(Unknown Source)
+	at java.base/java.lang.Long.valueOf(Unknown Source)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:204)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:439)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:412)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:161)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:80)
+	... 75 common frames omitted
+2025-04-16 16:29:43 [restartedMain] INFO  com.example.login.LoginApplication - Starting LoginApplication using Java 21.0.6 with PID 10048 (C:\Users\Admin\Documents\login\target\classes started by Admin in C:\Users\Admin\Documents\login)
+2025-04-16 16:29:43 [restartedMain] DEBUG com.example.login.LoginApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-16 16:29:43 [restartedMain] INFO  com.example.login.LoginApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-16 16:29:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-16 16:29:43 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-16 16:29:45 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16 16:29:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 146 ms. Found 3 JPA repository interfaces.
+2025-04-16 16:29:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-16 16:29:48 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-16 16:29:48 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-16 16:29:48 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-16 16:29:48 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5568 ms
+2025-04-16 16:29:49 [restartedMain] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthFilter' defined in file [C:\Users\Admin\Documents\login\target\classes\com\example\login\security\JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jwtUtil': Unsatisfied dependency expressed through field 'jwtExpiration': Failed to convert value of type 'java.lang.String' to required type 'long'; For input string: "36000000#10hoursinmilliseconds"
+2025-04-16 16:29:49 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-16 16:29:49 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-04-16 16:29:49 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-16 16:29:49 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.login.LoginApplication.main(LoginApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	... 11 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter' defined in file [C:\Users\Admin\Documents\login\target\classes\com\example\login\security\JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jwtUtil': Unsatisfied dependency expressed through field 'jwtExpiration': Failed to convert value of type 'java.lang.String' to required type 'long'; For input string: "36000000#10hoursinmilliseconds"
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4467)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 16 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtUtil': Unsatisfied dependency expressed through field 'jwtExpiration': Failed to convert value of type 'java.lang.String' to required type 'long'; For input string: "36000000#10hoursinmilliseconds"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1609)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 57 common frames omitted
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'long'; For input string: "36000000#10hoursinmilliseconds"
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:87)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:71)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1584)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 71 common frames omitted
+Caused by: java.lang.NumberFormatException: For input string: "36000000#10hoursinmilliseconds"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.base/java.lang.Long.parseLong(Unknown Source)
+	at java.base/java.lang.Long.valueOf(Unknown Source)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:204)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:439)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:412)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:161)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:80)
+	... 75 common frames omitted
+2025-04-16 16:32:30 [restartedMain] INFO  com.example.login.LoginApplication - Starting LoginApplication using Java 21.0.6 with PID 5672 (C:\Users\Admin\Documents\login\target\classes started by Admin in C:\Users\Admin\Documents\login)
+2025-04-16 16:32:30 [restartedMain] DEBUG com.example.login.LoginApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-16 16:32:30 [restartedMain] INFO  com.example.login.LoginApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-16 16:32:30 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-16 16:32:30 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-16 16:32:32 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16 16:32:32 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 174 ms. Found 3 JPA repository interfaces.
+2025-04-16 16:32:35 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-16 16:32:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-16 16:32:35 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-16 16:32:35 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-16 16:32:35 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5423 ms
+2025-04-16 16:32:36 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-16 16:32:36 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-16 16:32:37 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-16 16:32:38 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-16 16:32:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-16 16:32:39 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2cdd54f9
+2025-04-16 16:32:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-16 16:32:40 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-16 16:32:40 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-16 16:32:40 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-16 16:32:42 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-16 16:33:01 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16 16:33:03 [restartedMain] DEBUG c.e.login.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-04-16 16:33:03 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-16 16:33:03 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-16 16:33:06 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-16 16:33:07 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/tushar?useSSL=false&serverTimezone=UTC'
+2025-04-16 16:33:08 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-16 16:33:08 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-16 16:33:08 [restartedMain] INFO  com.example.login.LoginApplication - Started LoginApplication in 39.865 seconds (process running for 40.868)
+2025-04-16 16:42:50 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-16 16:42:50 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-16 16:42:50 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-04-16 16:42:50 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-04-16 16:42:50 [http-nio-8080-exec-2] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:42:50 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:42:50 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-04-16 16:42:51 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.login.model.Role` from String "ROLE_STAFF": not one of the values accepted for Enum class: [STAFF, STUDENT, ADMIN]]
+2025-04-16 16:42:51 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /error
+2025-04-16 16:42:51 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:43:11 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-04-16 16:43:11 [http-nio-8080-exec-3] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:43:11 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:43:11 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-04-16 16:43:11 [http-nio-8080-exec-3] INFO  c.e.login.controller.AuthController - Registration request received for username: johndoe
+2025-04-16 16:43:12 [http-nio-8080-exec-3] INFO  c.e.login.controller.AuthController - User registered successfully: johndoe
+2025-04-16 16:43:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 16:43:36 [http-nio-8080-exec-4] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:43:36 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:43:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 16:43:36 [http-nio-8080-exec-4] INFO  c.e.login.controller.AuthController - Login request received for username: johndoe
+2025-04-16 16:43:37 [http-nio-8080-exec-4] INFO  c.e.l.s.CustomUserDetailsService - User found with username: johndoe
+2025-04-16 16:43:37 [http-nio-8080-exec-4] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-04-16 16:43:37 [http-nio-8080-exec-4] INFO  c.e.l.s.CustomUserDetailsService - User found with username: johndoe
+2025-04-16 16:43:37 [http-nio-8080-exec-4] INFO  com.example.login.security.JwtUtil - Generated JWT token for user: johndoe
+2025-04-16 16:43:37 [http-nio-8080-exec-4] INFO  c.e.login.controller.AuthController - User logged in successfully: johndoe
+2025-04-16 16:46:53 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 16:46:53 [http-nio-8080-exec-7] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:46:53 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:48:41 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2025-04-16 16:48:41 [http-nio-8080-exec-10] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:48:41 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:48:41 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2025-04-16 16:48:41 [http-nio-8080-exec-10] INFO  c.e.login.controller.AuthController - Registration request received for username: admin
+2025-04-16 16:48:41 [http-nio-8080-exec-10] INFO  c.e.login.controller.AuthController - User registered successfully: admin
+2025-04-16 16:48:56 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 16:48:56 [http-nio-8080-exec-1] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:48:56 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:48:56 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 16:48:56 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2025-04-16 16:48:56 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /error
+2025-04-16 16:48:56 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:49:05 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 16:49:05 [http-nio-8080-exec-2] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:49:05 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:49:05 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 16:49:05 [http-nio-8080-exec-2] INFO  c.e.login.controller.AuthController - Login request received for username: admin
+2025-04-16 16:49:06 [http-nio-8080-exec-2] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 16:49:06 [http-nio-8080-exec-2] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-04-16 16:49:06 [http-nio-8080-exec-2] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 16:49:06 [http-nio-8080-exec-2] INFO  com.example.login.security.JwtUtil - Generated JWT token for user: admin
+2025-04-16 16:49:06 [http-nio-8080-exec-2] INFO  c.e.login.controller.AuthController - User logged in successfully: admin
+2025-04-16 16:49:19 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 16:49:19 [http-nio-8080-exec-3] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:49:19 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:51:19 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 16:51:19 [http-nio-8080-exec-6] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:51:19 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:51:19 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 16:51:19 [http-nio-8080-exec-6] INFO  c.e.login.controller.AuthController - Login request received for username: admin
+2025-04-16 16:51:19 [http-nio-8080-exec-6] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 16:51:19 [http-nio-8080-exec-6] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-04-16 16:51:19 [http-nio-8080-exec-6] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 16:51:19 [http-nio-8080-exec-6] INFO  com.example.login.security.JwtUtil - Generated JWT token for user: admin
+2025-04-16 16:51:19 [http-nio-8080-exec-6] INFO  c.e.login.controller.AuthController - User logged in successfully: admin
+2025-04-16 16:53:30 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/auth/test
+2025-04-16 16:53:30 [http-nio-8080-exec-9] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:53:30 [http-nio-8080-exec-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:53:30 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/auth/test
+2025-04-16 16:53:53 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 16:53:53 [http-nio-8080-exec-10] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:53:53 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:54:02 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/test
+2025-04-16 16:54:02 [http-nio-8080-exec-1] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:54:02 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:54:17 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/auth/test
+2025-04-16 16:54:17 [http-nio-8080-exec-2] INFO  c.e.login.security.JwtAuthFilter - No JWT token found in request
+2025-04-16 16:54:17 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:54:17 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/auth/test
+2025-04-16 16:57:40 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 16:57:40 [http-nio-8080-exec-5] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 16:57:40 [http-nio-8080-exec-5] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT strings must contain exactly 2 period characters. Found: 0
+2025-04-16 16:57:40 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:58:42 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 16:58:42 [http-nio-8080-exec-8] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 16:58:42 [http-nio-8080-exec-8] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT strings must contain exactly 2 period characters. Found: 0
+2025-04-16 16:58:42 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 16:58:42 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 16:58:42 [http-nio-8080-exec-8] INFO  c.e.login.controller.AuthController - Login request received for username: admin
+2025-04-16 16:58:42 [http-nio-8080-exec-8] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 16:58:42 [http-nio-8080-exec-8] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-04-16 16:58:42 [http-nio-8080-exec-8] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 16:58:42 [http-nio-8080-exec-8] INFO  com.example.login.security.JwtUtil - Generated JWT token for user: admin
+2025-04-16 16:58:42 [http-nio-8080-exec-8] INFO  c.e.login.controller.AuthController - User logged in successfully: admin
+2025-04-16 17:00:36 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 17:00:36 [http-nio-8080-exec-1] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:00:36 [http-nio-8080-exec-1] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT strings must contain exactly 2 period characters. Found: 0
+2025-04-16 17:00:36 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:00:36 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 17:00:36 [http-nio-8080-exec-1] INFO  c.e.login.controller.AuthController - Login request received for username: admin
+2025-04-16 17:00:36 [http-nio-8080-exec-1] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:00:37 [http-nio-8080-exec-1] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-04-16 17:00:37 [http-nio-8080-exec-1] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:00:37 [http-nio-8080-exec-1] INFO  com.example.login.security.JwtUtil - Generated JWT token for user: admin
+2025-04-16 17:00:37 [http-nio-8080-exec-1] INFO  c.e.login.controller.AuthController - User logged in successfully: admin
+2025-04-16 17:00:58 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 17:00:58 [http-nio-8080-exec-2] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:00:58 [http-nio-8080-exec-2] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT strings must contain exactly 2 period characters. Found: 0
+2025-04-16 17:00:58 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:01:44 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/students/get/all
+2025-04-16 17:01:44 [http-nio-8080-exec-3] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:01:44 [http-nio-8080-exec-3] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT strings must contain exactly 2 period characters. Found: 0
+2025-04-16 17:01:44 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:06:05 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 17:06:05 [http-nio-8080-exec-6] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:06:05 [http-nio-8080-exec-6] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT strings must contain exactly 2 period characters. Found: 0
+2025-04-16 17:06:05 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:06:05 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 17:06:05 [http-nio-8080-exec-6] INFO  c.e.login.controller.AuthController - Login request received for username: admin
+2025-04-16 17:06:05 [http-nio-8080-exec-6] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:06:05 [http-nio-8080-exec-6] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-04-16 17:06:05 [http-nio-8080-exec-6] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:06:05 [http-nio-8080-exec-6] INFO  com.example.login.security.JwtUtil - Generated JWT token for user: admin
+2025-04-16 17:06:05 [http-nio-8080-exec-6] INFO  c.e.login.controller.AuthController - User logged in successfully: admin
+2025-04-16 17:06:30 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 17:06:30 [http-nio-8080-exec-7] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:06:30 [http-nio-8080-exec-7] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT strings must contain exactly 2 period characters. Found: 0
+2025-04-16 17:06:30 [http-nio-8080-exec-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:07:33 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 17:07:33 [http-nio-8080-exec-10] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:07:33 [http-nio-8080-exec-10] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT strings must contain exactly 2 period characters. Found: 0
+2025-04-16 17:07:33 [http-nio-8080-exec-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:07:33 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 17:07:33 [http-nio-8080-exec-10] INFO  c.e.login.controller.AuthController - Login request received for username: admin
+2025-04-16 17:07:33 [http-nio-8080-exec-10] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:07:33 [http-nio-8080-exec-10] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-04-16 17:07:33 [http-nio-8080-exec-10] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:07:33 [http-nio-8080-exec-10] INFO  com.example.login.security.JwtUtil - Generated JWT token for user: admin
+2025-04-16 17:07:33 [http-nio-8080-exec-10] INFO  c.e.login.controller.AuthController - User logged in successfully: admin
+2025-04-16 17:07:59 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 17:07:59 [http-nio-8080-exec-1] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:07:59 [http-nio-8080-exec-1] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2025-04-16 17:07:59 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:08:10 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/auth/test
+2025-04-16 17:08:10 [http-nio-8080-exec-2] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:08:10 [http-nio-8080-exec-2] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2025-04-16 17:08:10 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:08:10 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/auth/test
+2025-04-16 17:08:21 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 17:08:21 [http-nio-8080-exec-3] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:08:21 [http-nio-8080-exec-3] ERROR c.e.login.security.JwtAuthFilter - Cannot set user authentication: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2025-04-16 17:08:21 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:08:37 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 17:08:37 [http-nio-8080-exec-4] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:08:37 [http-nio-8080-exec-4] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:08:37 [http-nio-8080-exec-4] INFO  c.e.login.security.JwtAuthFilter - User authenticated: admin
+2025-04-16 17:08:37 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/staff/get/all
+2025-04-16 17:08:37 [http-nio-8080-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.login.controller.StaffController.getAllStaff(); target is of class [com.example.login.controller.StaffController]
+2025-04-16 17:08:38 [http-nio-8080-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.login.controller.StaffController.getAllStaff(); target is of class [com.example.login.controller.StaffController]
+2025-04-16 17:08:38 [http-nio-8080-exec-4] INFO  c.e.login.controller.StaffController - Getting all staff members
+2025-04-16 17:10:01 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/students/get/all
+2025-04-16 17:10:01 [http-nio-8080-exec-6] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:10:01 [http-nio-8080-exec-6] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:10:01 [http-nio-8080-exec-6] INFO  c.e.login.security.JwtAuthFilter - User authenticated: admin
+2025-04-16 17:10:01 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/students/get/all
+2025-04-16 17:10:01 [http-nio-8080-exec-6] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.login.controller.StudentController.getAllStudents(); target is of class [com.example.login.controller.StudentController]
+2025-04-16 17:10:01 [http-nio-8080-exec-6] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.login.controller.StudentController.getAllStudents(); target is of class [com.example.login.controller.StudentController]
+2025-04-16 17:10:01 [http-nio-8080-exec-6] INFO  c.e.l.controller.StudentController - Getting all students
+2025-04-16 17:20:00 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2025-04-16 17:20:00 [http-nio-8080-exec-10] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:20:00 [http-nio-8080-exec-10] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:20:00 [http-nio-8080-exec-10] INFO  c.e.login.security.JwtAuthFilter - User authenticated: admin
+2025-04-16 17:20:00 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2025-04-16 17:20:00 [http-nio-8080-exec-10] INFO  c.e.login.controller.AuthController - Login request received for username: admin
+2025-04-16 17:20:00 [http-nio-8080-exec-10] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:20:00 [http-nio-8080-exec-10] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2025-04-16 17:20:00 [http-nio-8080-exec-10] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:20:00 [http-nio-8080-exec-10] INFO  com.example.login.security.JwtUtil - Generated JWT token for user: admin
+2025-04-16 17:20:00 [http-nio-8080-exec-10] INFO  c.e.login.controller.AuthController - User logged in successfully: admin
+2025-04-16 17:20:16 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/test
+2025-04-16 17:20:16 [http-nio-8080-exec-1] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:20:16 [http-nio-8080-exec-1] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:20:16 [http-nio-8080-exec-1] INFO  c.e.login.security.JwtAuthFilter - User authenticated: admin
+2025-04-16 17:20:16 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/test
+2025-04-16 17:20:16 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /error
+2025-04-16 17:20:16 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:20:21 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/test
+2025-04-16 17:20:21 [http-nio-8080-exec-2] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:20:21 [http-nio-8080-exec-2] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:20:21 [http-nio-8080-exec-2] INFO  c.e.login.security.JwtAuthFilter - User authenticated: admin
+2025-04-16 17:20:21 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/test
+2025-04-16 17:20:21 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /error
+2025-04-16 17:20:22 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-04-16 17:20:52 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/auth/test
+2025-04-16 17:20:52 [http-nio-8080-exec-3] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:20:52 [http-nio-8080-exec-3] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:20:52 [http-nio-8080-exec-3] INFO  c.e.login.security.JwtAuthFilter - User authenticated: admin
+2025-04-16 17:20:52 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/auth/test
+2025-04-16 17:21:03 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/staff/get/all
+2025-04-16 17:21:03 [http-nio-8080-exec-4] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:21:03 [http-nio-8080-exec-4] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:21:03 [http-nio-8080-exec-4] INFO  c.e.login.security.JwtAuthFilter - User authenticated: admin
+2025-04-16 17:21:03 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/staff/get/all
+2025-04-16 17:21:03 [http-nio-8080-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.login.controller.StaffController.getAllStaff(); target is of class [com.example.login.controller.StaffController]
+2025-04-16 17:21:03 [http-nio-8080-exec-4] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.login.controller.StaffController.getAllStaff(); target is of class [com.example.login.controller.StaffController]
+2025-04-16 17:21:03 [http-nio-8080-exec-4] INFO  c.e.login.controller.StaffController - Getting all staff members
+2025-04-16 17:21:19 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/students/get/all
+2025-04-16 17:21:19 [http-nio-8080-exec-5] INFO  c.e.login.security.JwtAuthFilter - JWT token found in request
+2025-04-16 17:21:19 [http-nio-8080-exec-5] INFO  c.e.l.s.CustomUserDetailsService - User found with username: admin
+2025-04-16 17:21:19 [http-nio-8080-exec-5] INFO  c.e.login.security.JwtAuthFilter - User authenticated: admin
+2025-04-16 17:21:19 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/students/get/all
+2025-04-16 17:21:19 [http-nio-8080-exec-5] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.login.controller.StudentController.getAllStudents(); target is of class [com.example.login.controller.StudentController]
+2025-04-16 17:21:19 [http-nio-8080-exec-5] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.example.login.controller.StudentController.getAllStudents(); target is of class [com.example.login.controller.StudentController]
+2025-04-16 17:21:19 [http-nio-8080-exec-5] INFO  c.e.l.controller.StudentController - Getting all students
+2025-04-16 17:24:41 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-16 17:24:41 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-16 17:24:41 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-16 17:24:41 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16 17:24:42 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-16 17:24:42 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-16 17:24:42 [restartedMain] INFO  com.example.login.LoginApplication - Starting LoginApplication using Java 21.0.6 with PID 5672 (C:\Users\Admin\Documents\login\target\classes started by Admin in C:\Users\Admin\Documents\login)
+2025-04-16 17:24:42 [restartedMain] DEBUG com.example.login.LoginApplication - Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-16 17:24:42 [restartedMain] INFO  com.example.login.LoginApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-16 17:24:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-16 17:24:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+2025-04-16 17:24:44 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-16 17:24:44 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-16 17:24:44 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-16 17:24:45 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-16 17:24:45 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2535 ms
+2025-04-16 17:24:45 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-16 17:24:45 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-16 17:24:45 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-16 17:24:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-04-16 17:24:45 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12fa955d
+2025-04-16 17:24:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-04-16 17:24:45 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-16 17:24:45 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-16 17:24:45 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-16 17:24:46 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-16 17:24:46 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-16 17:24:46 [restartedMain] DEBUG c.e.login.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2025-04-16 17:24:46 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-04-16 17:24:47 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-16 17:24:47 [restartedMain] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-16 17:24:47 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/tushar?useSSL=false&serverTimezone=UTC'
+2025-04-16 17:24:47 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-16 17:24:47 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-16 17:24:47 [restartedMain] INFO  com.example.login.LoginApplication - Started LoginApplication in 5.598 seconds (process running for 3140.448)
+2025-04-16 17:24:47 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
